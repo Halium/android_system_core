@@ -57,7 +57,7 @@ bool NetlinkListener::onDataAvailable(SocketClient *cli)
     if (count < 0) {
         if (uid > 0)
             LOG_EVENT_INT(65537, uid);
-        SLOGE("recvmsg failed (%s)", strerror(errno));
+        SLOGV("recvmsg failed (%s)", strerror(errno));
         return false;
     }
 
