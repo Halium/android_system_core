@@ -120,9 +120,6 @@ static inline void utf32_codepoint_to_utf8(uint8_t* dstP, char32_t srcChar, size
         [[gnu::fallthrough]];
         #endif
         case 1: *--dstP = (uint8_t)(srcChar | kFirstByteMark[bytes]);
-        #if __GNUC__ >= 7
-        [[gnu::fallthrough]];
-        #endif
         }
 }
 
